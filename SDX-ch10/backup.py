@@ -9,6 +9,7 @@ sequence='0'
 
 # [backup]
 def backup(source_dir, backup_dir):
+    global sequence
     manifest = hash_all(source_dir)
     sequence = str((int(sequence))+1)
     
@@ -33,8 +34,9 @@ def current_time():
 
 # [write]
 def write_manifest(backup_dir, sequence, manifest):
-    while len(sequence<9):
+    while len(sequence)<9:
         sequence="0"+sequence
+    print(sequence)
     backup_dir = Path(backup_dir)
     if not backup_dir.exists():
         backup_dir.mkdir()
