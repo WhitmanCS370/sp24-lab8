@@ -10,9 +10,13 @@ from hash_all import hash_all
 
 SEQUENCE = 0
 
-# [backup]
-def backup(source_dir, backup_dir):
-    manifest = hash_all(source_dir)
+# [ourHash]
+def ourHash(input):
+    return str(hash(input))
+# [/ourHash]
+    
+def backup(source_dir, backup_dir, hash = hash_all):
+    manifest = hash(source_dir)
     SEQUENCE = SEQUENCE + 1
     write_manifest(backup_dir, manifest)
     copy_files(source_dir, backup_dir, manifest)

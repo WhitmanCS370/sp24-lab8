@@ -59,3 +59,6 @@ to translate to CSV or JSON :).
 
 exercise 2b: make migrate.py. converted by opening the csv, saving everything to a local variable, then opening the json file
 and putting everything back.
+
+exercise 3a/b: add basic hash function using built-in hash(). give backup() optional hash parameter with default being hash_all. if you want, you can specify the other hash function. This could also be implimented so that you don't need to pass the function in as an argument, but this is cleaner.
+
