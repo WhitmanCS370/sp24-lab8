@@ -7,21 +7,25 @@ Organization:
 * SDX-ch10: The code files for the _SDX Ch. 10_ activity (as downloaded directly from the book website, unmodified) 
 
 ## Team Members for Part 1
-Enter your names here
+Jack A. and Grant D.
 
 ## Team Roles for Part 1
 Who will start out as
-* DRIVER: Driver's name
-* NAVIGATOR: Navigator's name
+* DRIVER: Grant
+* NAVIGATOR: Jack
 
-You will switch halfway through the _SDX Ch. 9_ activity.
+You will switch halfway through the _SDX Ch. 10_ activity.
 
 ## Part 1 Documentation
 
 Write your answers to the questions below.
 
 * What were the main ideas from SDX chapter 10?
+File storage and compression and retrieval using hashing. Using manifests to store sets of versions of files. (In our case a more basic one using just csv files and no remote storage)
+
+
 * What questions did you have about the material in the chapters? What did you find confusing?
+How exeactly does glob() work?
 
 
 ### Exercise 1: What familiar design pattern does this chapter employ?
@@ -29,7 +33,11 @@ Write your answers to the questions below.
 Write your answers to the questions below.
 
 * What design pattern do you think Wilson is using in section 10.4, and why?
+We think that Wilson is using a subclass method design pattern. He refactored his work in backup.py to use OOP and defined an Archive base class that other subclasses like ArchiveLocal can inherit from and extend/override methods of. 
+
 * How might you use this pattern to implement other kinds of archive features/properties?
+
+We can create a new specific type of Archive class that inherits from the base Archive class and add new methods that are specific to its use or override the backup method if we need to change it's functionality. We can also add additionall attributes as needed.
 
 ### Exercise 2: Applying the ideas in this chapter to your group project
 
@@ -37,6 +45,12 @@ Many of the concepts---and their implementations---in this chapter could be usef
 
 Include a summary of your discussion here.
 
+1) Using their design patterns and using base classes
+2) Version control for audio files (keep track of the state of audio file as we work. could come in handy if a user adds a filter to their file and doesn't like it tec.)
+3) Manifests for playlists (keep track of the state of all the files and their metadata)
+
 ### Exercise 3: SDX section 10.6
 
 Write a short summary of what you did (which exercises) below.
+
+We worked through exercises 1 and 2 from section 10.6. We changed the naming scheme of manifest files for the first one to replace timestamps with enumerated file names. For the second exercise, we added a `--json` flag to specify export of the data as JSON. If this option is selected, the manifest object is serialized into a JSON string.
