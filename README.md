@@ -55,3 +55,8 @@ Include a summary of your discussion here.
 ### Exercise 3: SDX section 10.6
 
 Write a short summary of what you did (which exercises) below.
+
+* We began by trying to install Python 3.10 on the lab computers but obviously we don't have permission
+* Then, we tried to run this on Andrew Tate's Windows computer but some tests required a unix specific command
+* We finally got the program to run
+* Then, we completed Sequencing Backups and created JSON Manifests.  We also created a migration function which you can call with python3 backup.py migrate_stuff backup_dir
