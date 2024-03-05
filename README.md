@@ -43,3 +43,5 @@ Include a summary of your discussion here.
 Write a short summary of what you did (which exercises) below.
 
 Did Sequencing backups; Wrote filename() to check for existing manifest files and return the next number. Modified backup() and write_manifest() to use this instead of current_time()
+
+Did json filename; Modified backup() and write_manifest() to use either csv or json based on input. Modified fileName() to also check for json
