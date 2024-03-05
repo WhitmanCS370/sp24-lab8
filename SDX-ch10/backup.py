@@ -5,13 +5,15 @@ import time
 from pathlib import Path
 
 from hash_all import hash_all
-
+sequence='0'
 
 # [backup]
 def backup(source_dir, backup_dir):
+    global sequence
     manifest = hash_all(source_dir)
-    timestamp = current_time()
-    write_manifest(backup_dir, timestamp, manifest)
+    sequence = str((int(sequence))+1)
+    
+    write_manifest(backup_dir, sequence, manifest)
     copy_files(source_dir, backup_dir, manifest)
     return manifest
 # [/backup]
@@ -31,11 +33,14 @@ def current_time():
 # [/time]
 
 # [write]
-def write_manifest(backup_dir, timestamp, manifest):
+def write_manifest(backup_dir, sequence, manifest):
+    while len(sequence)<9:
+        sequence="0"+sequence
+    print(sequence)
     backup_dir = Path(backup_dir)
     if not backup_dir.exists():
         backup_dir.mkdir()
-    manifest_file = Path(backup_dir, f"{timestamp}.csv")
+    manifest_file = Path(backup_dir, f"{sequence}.csv")
     with open(manifest_file, "w") as raw:
         writer = csv.writer(raw)
         writer.writerow(["filename", "hash"])
