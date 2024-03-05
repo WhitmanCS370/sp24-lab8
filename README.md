@@ -7,12 +7,12 @@ Organization:
 * SDX-ch10: The code files for the _SDX Ch. 10_ activity (as downloaded directly from the book website, unmodified) 
 
 ## Team Members for Part 1
-Enter your names here
+Coden + Rhys
 
 ## Team Roles for Part 1
 Who will start out as
-* DRIVER: Driver's name
-* NAVIGATOR: Navigator's name
+* DRIVER: Coden
+* NAVIGATOR: Rhys
 
 You will switch halfway through the _SDX Ch. 9_ activity.
 
@@ -21,7 +21,9 @@ You will switch halfway through the _SDX Ch. 9_ activity.
 Write your answers to the questions below.
 
 * What were the main ideas from SDX chapter 10?
+You can save files, hash them, and hash their version histories. Basically, you can make Git using python.
 * What questions did you have about the material in the chapters? What did you find confusing?
+How is this different from how GitHub is done?
 
 
 ### Exercise 1: What familiar design pattern does this chapter employ?
