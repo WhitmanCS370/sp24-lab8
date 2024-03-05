@@ -1,7 +1,9 @@
 import csv
 import shutil
 import sys
+import os
 import time
+from migrate import migrate
 from pathlib import Path
 
 from hash_all import hash_all
@@ -23,6 +25,7 @@ class ArchiveLocal(Archive):
     def __init__(self, source_dir, backup_dir):
         super().__init__(source_dir)
         self._backup_dir = backup_dir
+        self.timestep = 0
 
     def _copy_files(self, manifest):
         for (filename, hash_code) in manifest:
@@ -33,13 +36,20 @@ class ArchiveLocal(Archive):
 
     def _write_manifest(self, manifest):
         t = self._timestamp()
+        # t = str(t)
+        # tstring = ""
+        # for i in range(8-len(t)): 
+        #     tstring.append(0)
+        # tstring.append(t)
+        # self.timestep += 1
+
         backup_dir = Path(self._backup_dir)
         if not backup_dir.exists():
             backup_dir.mkdir()
         manifest_file = Path(backup_dir, f"{t}.csv")
         with open(manifest_file, "w") as raw:
             writer = csv.writer(raw)
-            writer.writerow(["filename", "hash"])
+            writer.writerow(["filename", "hash", "user_name"])
             writer.writerows(manifest)
 
     def _timestamp(self):
@@ -64,6 +74,9 @@ def analyze_and_save(options, archiver):
 # [/use]
 
 if __name__ == "__main__":
+    if sys.argv[1] == "-m" or sys.argv[1] == "--migrate":
+        assert(os.path.isdir(sys.argv[2]))
+        migrate(sys.argv[2])
     assert len(sys.argv) == 3, "Usage: backup.py source_dir backup_dir"
     source_dir = sys.argv[1]
     backup_dir = sys.argv[2]
