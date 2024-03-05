@@ -9,18 +9,18 @@ def our_fs(fs):
     fs.create_file("sub_dir/c.txt", contents="ccc")
 
 def test_hashing(our_fs):
-    result = hash_all(".")
+    result = hash_all(".")[0]
     expected = {"a.txt", "b.txt", "sub_dir/c.txt"}
     assert {r[0] for r in result} == expected
     assert all(len(r[1]) == HASH_LEN for r in result)
 
 # [change]
 def test_change(our_fs):
-    original = hash_all(".")
+    original = hash_all(".")[0]
     original = [entry for entry in original if entry[0] == "a.txt"][0]
     with open("a.txt", "w") as writer:
         writer.write("this is new content for a.txt")
-    changed = hash_all(".")
+    changed = hash_all(".")[0]
     changed = [entry for entry in changed if entry[0] == "a.txt"][0]
     assert original != changed
 # [/change]
