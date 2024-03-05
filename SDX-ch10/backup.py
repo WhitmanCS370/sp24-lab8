@@ -41,7 +41,7 @@ def write_manifest(backup_dir, manifest):
     manifest_file = Path(backup_dir, f"{SEQUENCE}.csv")
     with open(manifest_file, "w") as raw:
         writer = csv.writer(raw)
-        writer.writerow(["filename", "hash"])
+        writer.writerow(["filename", "hash", "username"])
         writer.writerows(manifest)
 # [/write]
 
