@@ -56,3 +56,6 @@ names the manifest files by their number in the sequences instead of the time th
 
 exercise 2a: We implemented stuff with json and csv saving. We use the manifest (output from backup), which is a dict and easy
 to translate to CSV or JSON :).
+
+exercise 2b: make migrate.py. converted by opening the csv, saving everything to a local variable, then opening the json file
+and putting everything back.
