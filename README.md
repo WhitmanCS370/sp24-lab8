@@ -45,3 +45,4 @@ Everyone agrees that our projects need major refactoring, including better namin
 ### Exercise 3: SDX section 10.6
 
 Write a short summary of what you did (which exercises) below.
+We did the JSON manifest exercise and implemented a rudimentary template for a flag condition
