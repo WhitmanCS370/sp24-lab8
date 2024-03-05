@@ -3,6 +3,7 @@ from glob import glob
 import sys
 from pathlib import Path
 from hashlib import sha256
+from os import getlogin
 
 # [func]
 HASH_LEN = 16
@@ -14,7 +15,7 @@ def hash_all(root):
         with open(full_name, "rb") as reader:
             data = reader.read()
             hash_code = sha256(data).hexdigest()[:HASH_LEN]
-            result.append((name, hash_code))
+            result.append((name, hash_code, getlogin()))
     return result
 # [/func]
 
