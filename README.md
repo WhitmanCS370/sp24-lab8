@@ -11,8 +11,8 @@ Enter your names here
 
 ## Team Roles for Part 1
 Who will start out as
-* DRIVER: Driver's name
-* NAVIGATOR: Navigator's name
+* DRIVER: Shahrom Dehoti
+* NAVIGATOR: Gabe Paris-Moe
 
 You will switch halfway through the _SDX Ch. 9_ activity.
 
@@ -21,7 +21,9 @@ You will switch halfway through the _SDX Ch. 9_ activity.
 Write your answers to the questions below.
 
 * What were the main ideas from SDX chapter 10?
+* Version control uses hashing to uniquely identify each saved file. Testing is done using mock file system because it is faster and saver. Then, we use base class to specify what a component must be able to do and deerive child classes to implement those operations. 
 * What questions did you have about the material in the chapters? What did you find confusing?
+* We are a bit confused on what race conditions exactly are and how they affect the files.
 
 
 ### Exercise 1: What familiar design pattern does this chapter employ?
