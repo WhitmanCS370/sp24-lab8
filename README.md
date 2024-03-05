@@ -53,3 +53,4 @@ Include a summary of your discussion here.
 
 Write a short summary of what you did (which exercises) below.
 
+We worked through exercises 1 and 2 from section 10.6. We changed the naming scheme of manifest files for the first one to replace timestamps with enumerated file names. For the second exercise, we added a `--json` flag to specify export of the data as JSON. If this option is selected, the manifest object is serialized into a JSON string.
