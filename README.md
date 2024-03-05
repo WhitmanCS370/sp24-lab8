@@ -7,21 +7,25 @@ Organization:
 * SDX-ch10: The code files for the _SDX Ch. 10_ activity (as downloaded directly from the book website, unmodified) 
 
 ## Team Members for Part 1
-Enter your names here
+Jack A. and Grant D.
 
 ## Team Roles for Part 1
 Who will start out as
-* DRIVER: Driver's name
-* NAVIGATOR: Navigator's name
+* DRIVER: Grant
+* NAVIGATOR: Jack
 
-You will switch halfway through the _SDX Ch. 9_ activity.
+You will switch halfway through the _SDX Ch. 10_ activity.
 
 ## Part 1 Documentation
 
 Write your answers to the questions below.
 
 * What were the main ideas from SDX chapter 10?
+File storage and compression and retrieval using hashing. Using manifests to store sets of versions of files. (In our case a more basic one using just csv files and no remote storage)
+
+
 * What questions did you have about the material in the chapters? What did you find confusing?
+How exeactly does glob() work?
 
 
 ### Exercise 1: What familiar design pattern does this chapter employ?
