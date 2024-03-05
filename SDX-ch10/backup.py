@@ -6,12 +6,19 @@ from pathlib import Path
 
 from hash_all import hash_all
 
+def get_next_number():
+    with open("number.txt") as f:
+        num = f.readline()
+        f.write(int(num) + 1)
+    
+    return str(num + 10 ** 10)[1:]
+
 
 # [backup]
 def backup(source_dir, backup_dir):
     manifest = hash_all(source_dir)
-    timestamp = current_time()
-    write_manifest(backup_dir, timestamp, manifest)
+    backup_number = get_next_number()
+    write_manifest(backup_dir, backup_number, manifest)
     copy_files(source_dir, backup_dir, manifest)
     return manifest
 # [/backup]
