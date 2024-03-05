@@ -23,6 +23,7 @@ class ArchiveLocal(Archive):
     def __init__(self, source_dir, backup_dir):
         super().__init__(source_dir)
         self._backup_dir = backup_dir
+        self.file_number = 0
 
     def _copy_files(self, manifest):
         for (filename, hash_code) in manifest:
@@ -36,7 +37,8 @@ class ArchiveLocal(Archive):
         backup_dir = Path(self._backup_dir)
         if not backup_dir.exists():
             backup_dir.mkdir()
-        manifest_file = Path(backup_dir, f"{t}.csv")
+        manifest_file = Path(backup_dir, f"{self.file_number}.csv")
+        self.file_number +=1
         with open(manifest_file, "w") as raw:
             writer = csv.writer(raw)
             writer.writerow(["filename", "hash"])

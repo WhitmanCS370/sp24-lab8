@@ -33,7 +33,11 @@ How exeactly does glob() work?
 Write your answers to the questions below.
 
 * What design pattern do you think Wilson is using in section 10.4, and why?
+We think that Wilson is using a subclass method design pattern. He refactored his work in backup.py to use OOP and defined an Archive base class that other subclasses like ArchiveLocal can inherit from and extend/override methods of. 
+
 * How might you use this pattern to implement other kinds of archive features/properties?
+
+We can create a new specific type of Archive class that inherits from the base Archive class and add new methods that are specific to its use or override the backup method if we need to change it's functionality. We can also add additionall attributes as needed.
 
 ### Exercise 2: Applying the ideas in this chapter to your group project
 
@@ -41,6 +45,11 @@ Many of the concepts---and their implementations---in this chapter could be usef
 
 Include a summary of your discussion here.
 
+1) Using their design patterns and using base classes
+2) Version control for audio files (keep track of the state of audio file as we work. could come in handy if a user adds a filter to their file and doesn't like it tec.)
+3) Manifests for playlists (keep track of the state of all the files and their metadata)
+
 ### Exercise 3: SDX section 10.6
 
 Write a short summary of what you did (which exercises) below.
+
