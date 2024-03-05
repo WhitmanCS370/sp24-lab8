@@ -7,17 +7,18 @@ Organization:
 * SDX-ch10: The code files for the _SDX Ch. 10_ activity (as downloaded directly from the book website, unmodified) 
 
 ## Team Members for Part 1
-Enter your names here
+Steven Lin
+Aiden von Buchwaldt
 
 ## Team Roles for Part 1
 Who will start out as
-* DRIVER: Driver's name
-* NAVIGATOR: Navigator's name
+* DRIVER: Steven Lin
+* NAVIGATOR: Aiden von Buchwaldt
 
 You will switch halfway through the _SDX Ch. 9_ activity.
 
 ## Part 1 Documentation
-
+## Already completed with other group before reforming group
 Write your answers to the questions below.
 
 * What were the main ideas from SDX chapter 10?
@@ -40,3 +41,7 @@ Include a summary of your discussion here.
 ### Exercise 3: SDX section 10.6
 
 Write a short summary of what you did (which exercises) below.
+
+Did Sequencing backups; Wrote filename() to check for existing manifest files and return the next number. Modified backup() and write_manifest() to use this instead of current_time()
+
+Did json filename; Modified backup() and write_manifest() to use either csv or json based on input. Modified fileName() to also check for json
