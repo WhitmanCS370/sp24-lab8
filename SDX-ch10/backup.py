@@ -6,12 +6,10 @@ from pathlib import Path
 
 from hash_all import hash_all
 
-
 # [backup]
 def backup(source_dir, backup_dir):
     manifest = hash_all(source_dir)
-    timestamp = current_time()
-    write_manifest(backup_dir, timestamp, manifest)
+    write_manifest(backup_dir, manifest)
     copy_files(source_dir, backup_dir, manifest)
     return manifest
 # [/backup]
@@ -25,17 +23,22 @@ def copy_files(source_dir, backup_dir, manifest):
             shutil.copy(source_path, backup_path)
 # [/copy]
 
+def current_counter(backup_dir):
+    return len(backup_dir)
+
 # [time]
 def current_time():
     return f"{time.time()}".split(".")[0]
 # [/time]
 
 # [write]
-def write_manifest(backup_dir, timestamp, manifest):
+def write_manifest(backup_dir, manifest):
     backup_dir = Path(backup_dir)
     if not backup_dir.exists():
         backup_dir.mkdir()
-    manifest_file = Path(backup_dir, f"{timestamp}.csv")
+    counter = len(backup_dir) + 1
+    manifest_file = Path(backup_dir, f"{str(counter).zfill(7)}.csv")
+    print("hello")
     with open(manifest_file, "w") as raw:
         writer = csv.writer(raw)
         writer.writerow(["filename", "hash"])
