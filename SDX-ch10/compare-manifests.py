@@ -6,4 +6,4 @@ def name_with_diff_hash(manifest1, manifest2):
                 diff[name] += [manifest1[name], manifest2[name]]
             else:
                 diff[name] = [manifest1[name], manifest2[name]]
-    return diff
+    return diff 
