@@ -13,9 +13,10 @@ def hash_all(root):
         full_name = Path(root, name)
         with open(full_name, "rb") as reader:
             data = reader.read()
+            first_line = reader.readline().strip('\n')
             hash_code = sha256(data).hexdigest()[:HASH_LEN]
             result.append((name, hash_code))
-    return result
+    return result, first_line
 # [/func]
 
 if __name__ == "__main__":
